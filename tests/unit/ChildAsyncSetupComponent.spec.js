@@ -6,6 +6,7 @@ describe('ChildAsyncSetupComponent.vue', () => {
   let wrapper;
 
   beforeEach(async () => {
+    jest.useFakeTimers();
     const ChildAsyncSetupComponentWrappedInSuspense = defineComponent({
       components: { ChildAsyncSetupComponent },
       template: '<Suspense><ChildAsyncSetupComponent/></Suspense>'
@@ -13,6 +14,8 @@ describe('ChildAsyncSetupComponent.vue', () => {
     
     wrapper = mount(ChildAsyncSetupComponentWrappedInSuspense);
     
+    jest.runAllTimers();
+
     await flushPromises();
     await nextTick();
   });
