@@ -1,15 +1,15 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <ParentComponentWithSuspense/>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import ParentComponentWithSuspense from './components/ParentComponentWithSuspense.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    ParentComponentWithSuspense,
   }
 }
 </script>
