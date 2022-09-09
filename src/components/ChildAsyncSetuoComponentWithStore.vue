@@ -7,15 +7,13 @@
 <script>
 export default {
   async setup() {
-    const someFunctionThatReturnsAPromise = () => {
-      return new Promise(function(resolve){
-        setTimeout(function(){
-          resolve();
-        }, 1000)
-      });
-    };
+    const someFunctionThatReturnsAPromise = (resolve) => new Promise(() => {
+      setTimeout(() => {
+        resolve();
+      }, 1000);
+    });
 
-    await someFunctionThatReturnsAPromise();
+    someFunctionThatReturnsAPromise();
   },
 };
 </script>

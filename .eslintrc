@@ -15,12 +15,8 @@
         {
           "devDependencies": [
             "**/*.test.js",
-            "**/*.integration.js",
-            "**/*.stories.js",
-            "**/.storybook/*.js",
             "**/__fixtures__/**",
-            "**/vue.config.js",
-            "**/webpack.config.js"
+            "**/vue.config.js"
           ]
         }
       ]

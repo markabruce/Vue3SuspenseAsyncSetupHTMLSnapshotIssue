@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "es6",
     "module": "esnext",
     "baseUrl": "./",
     "moduleResolution": "node",
@@ -13,15 +13,15 @@
         "./__fixtures__/*"
       ],
     },
-    "lib": [
-      "esnext",
-      "dom",
-      "dom.iterable",
-      "scripthost"
-    ]
   },
+  "lib": [
+    "esnext",
+    "dom",
+    "dom.iterable",
+    "scripthost"
+  ],
   "exclude": [
     "dist",
     "node_modules"
-  ],
+  ]
 }

@@ -1,14 +1,13 @@
-import { mount, flushPromises } from '@vue/test-utils'
-import { defineComponent, nextTick } from 'vue'
-import { CREATE_ACCOUNT } from '@/store/actions/account/actions.js';
-import ChildAsyncSetupComponentWithStore from '@/components/ChildAsyncSetupComponentWithStore.vue'
+import { mount, flushPromises } from '@vue/test-utils';
+import { defineComponent, nextTick } from 'vue';
+import ChildAsyncSetupComponentWithStore from '@/components/ChildAsyncSetupComponentWithStore.vue';
 import setupStore from '@/fixtures/store-setup.js';
 
 const accountsModuleActions = {
   createAccount: jest.fn(),
 };
-  
-describe('ChildAsyncSetupComponent.vue', () => {
+
+describe('ChildAsyncSetupComponent', () => {
   let wrapper;
   let store;
 
@@ -40,9 +39,8 @@ describe('ChildAsyncSetupComponent.vue', () => {
 
     console.log('&&&&&&&&&&&&&&&&&');
     console.log(wrapper.html());
-    
-    console.log(subscriptionTiersModuleActions.getSubscriptionTiers);
-    console.log(userSubscriptionModuleActions.getUserSubscription);
+
+    console.log(accountsModuleActions.createAccount);
 
     // wrapper = mount(PricePlanSelectionComponentWithSuspense, {
     //   global: {
@@ -51,14 +49,13 @@ describe('ChildAsyncSetupComponent.vue', () => {
     // });
   });
   beforeEach(async () => {
-    
     const ChildAsyncSetupComponentWrappedInSuspense = defineComponent({
       components: { ChildAsyncSetupComponentWithStore },
-      template: '<Suspense><ChildAsyncSetupComponentWithStore/></Suspense>'
-    })
-    
+      template: '<Suspense><ChildAsyncSetupComponentWithStore/></Suspense>',
+    });
+
     wrapper = mount(ChildAsyncSetupComponentWrappedInSuspense);
-    
+
     jest.runAllTimers();
 
     await flushPromises();
@@ -67,5 +64,5 @@ describe('ChildAsyncSetupComponent.vue', () => {
 
   it('renders to match html snapshot', () => {
     expect(wrapper.html()).toMatchSnapshot();
-  })
-})
+  });
+});

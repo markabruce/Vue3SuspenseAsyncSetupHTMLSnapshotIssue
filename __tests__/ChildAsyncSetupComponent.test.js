@@ -1,19 +1,19 @@
-import { mount, flushPromises } from '@vue/test-utils'
-import { defineComponent, nextTick } from 'vue'
-import ChildAsyncSetupComponent from '@/components/ChildAsyncSetupComponent.vue'
+import { mount, flushPromises } from '@vue/test-utils';
+import { defineComponent, nextTick } from 'vue';
+import ChildAsyncSetupComponent from '@/components/ChildAsyncSetupComponent.vue';
 
-describe('ChildAsyncSetupComponent.vue', () => {
+describe('ChildAsyncSetupComponent', () => {
   let wrapper;
 
   beforeEach(async () => {
     jest.useFakeTimers();
     const ChildAsyncSetupComponentWrappedInSuspense = defineComponent({
       components: { ChildAsyncSetupComponent },
-      template: '<Suspense><ChildAsyncSetupComponent/></Suspense>'
-    })
-    
+      template: '<Suspense><ChildAsyncSetupComponent/></Suspense>',
+    });
+
     wrapper = mount(ChildAsyncSetupComponentWrappedInSuspense);
-    
+
     jest.runAllTimers();
 
     await flushPromises();
@@ -22,5 +22,5 @@ describe('ChildAsyncSetupComponent.vue', () => {
 
   it('renders to match html snapshot', () => {
     expect(wrapper.html()).toMatchSnapshot();
-  })
-})
+  });
+});
