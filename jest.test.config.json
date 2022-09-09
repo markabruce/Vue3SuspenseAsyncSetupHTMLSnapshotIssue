@@ -1,0 +1,22 @@
+{
+    "testEnvironment": "jsdom",
+    "testURL": "http://localhost:8080",
+    "testPathIgnorePatterns": [
+      "/dist/",
+      "/node_modules/",
+      "/stories/",
+      "/public/",
+      "/.storybook/",
+      "/.github/"
+    ],
+    "testMatch": [
+      "**/__tests__/**/*.test.js"
+    ],
+    "transform": {
+      "^.+\\.js$": "babel-jest",
+      "^.+\\.vue$": "@vue/vue3-jest"
+    },
+    "moduleNameMapper": {
+      "@fixtures/(.*)$": "<rootDir>/__fixtures__/$1"
+    }
+  }

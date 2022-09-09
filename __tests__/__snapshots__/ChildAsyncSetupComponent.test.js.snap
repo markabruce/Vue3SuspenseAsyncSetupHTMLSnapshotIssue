@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ChildAsyncSetupComponent.vue renders to match html snapshot 1`] = `
+<!-- eslint-disable max-len -->
+<div>This is the Async Setup Component</div>
+<!-- eslint-enable max-len -->
+`;

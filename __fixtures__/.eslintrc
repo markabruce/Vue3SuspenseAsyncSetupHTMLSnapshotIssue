@@ -1,0 +1,66 @@
+{
+    "root": true,
+    "env": {
+      "node": true,
+      "jest": true
+    },
+    "extends": [
+      "plugin:vue/vue3-essential",
+      "@vue/airbnb",
+      "plugin:import/typescript"
+    ],
+    "rules": {
+      "import/no-extraneous-dependencies": [
+        "error",
+        {
+          "devDependencies": [
+            "**/*.test.js",
+            "**/*.integration.js",
+            "**/*.stories.js",
+            "**/.storybook/*.js",
+            "**/__fixtures__/**",
+            "**/vue.config.js",
+            "**/webpack.config.js"
+          ]
+        }
+      ]
+    },
+    "parserOptions": {
+      "parser": "@babel/eslint-parser"
+    },
+    "settings": {
+      "import/resolver": {
+        "typescript": {},
+        "alias": {
+          "map": [
+            [
+              "@/*",
+              "./src/"
+            ],
+            [
+              "@fixtures/*",
+              "./__fixtures__/"
+            ],
+          ]
+        },
+        "extensions": [
+          ".js",
+          ".json",
+          ".ts",
+          ".vue"
+        ]
+      }
+    },
+    "overrides": [
+      {
+        "files": [
+          "**/__tests__/*.{j,t}s?(x)",
+          "**/tests/unit/**/*.spec.{j,t}s?(x)"
+        ],
+        "env": {
+          "jest": true
+        }
+      }
+    ]
+  }
+  

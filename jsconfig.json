@@ -4,10 +4,14 @@
     "module": "esnext",
     "baseUrl": "./",
     "moduleResolution": "node",
+    "allowSyntheticDefaultImports": false,
     "paths": {
       "@/*": [
-        "src/*"
-      ]
+        "./src/*"
+      ],
+      "@fixtures/*": [
+        "./__fixtures__/*"
+      ],
     },
     "lib": [
       "esnext",
@@ -15,5 +19,9 @@
       "dom.iterable",
       "scripthost"
     ]
-  }
+  },
+  "exclude": [
+    "dist",
+    "node_modules"
+  ],
 }
