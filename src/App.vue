@@ -4,14 +4,14 @@
 </template>
 
 <script>
-import ParentComponentWithSuspense from './components/ParentComponentWithSuspense.vue'
+import ParentComponentWithSuspense from './components/ParentComponentWithSuspense.vue';
 
 export default {
   name: 'App',
   components: {
     ParentComponentWithSuspense,
-  }
-}
+  },
+};
 </script>
 
 <style>
